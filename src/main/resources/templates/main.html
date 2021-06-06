@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Products</title>
+</head>
+<body>
+	<h2 th:text="'Hello, ' + ${username} + '!'" />
+	<p>
+		<a href="/logout">Sign out here</a>
+	</p>
+	<h2>These are all the products:</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Topic</th>
+				<th>Description</th>
+			</tr>
+		<tbody>
+			<tr th:if="${tasks.empty}">
+				<td colspan="2">No Tasks Available</td>
+			</tr>
+			<tr th:each="task : ${tasks}">
+				<td><span th:text="${task.topic}"> Topic </span></td>
+				<td><span th:text="${task.description}"> Description </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
