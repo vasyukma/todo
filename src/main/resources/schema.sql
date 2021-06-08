@@ -10,6 +10,8 @@
 DROP TABLE IF EXISTS auth_user;
 DROP TABLE IF EXISTS authority;
 DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS boxType;
+DROP TABLE IF EXISTS box;
 
 
 CREATE TABLE IF NOT EXISTS auth_user
@@ -27,10 +29,22 @@ CREATE TABLE IF NOT EXISTS authority
     auth_user int NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS task
+CREATE TABLE IF NOT EXISTS Task
 (
-    id serial PRIMARY KEY,
-    topic text NOT NULL,
-    description text NOT NULL
+    id serial primary key,
+    subject text not null
 );
 
+CREATE TABLE IF NOT EXISTS Job
+(
+    id serial primary key,
+    task int not null,
+    box int not null
+);
+
+
+CREATE TABLE IF NOT EXISTS Box
+(
+    id serial primary key,
+    name text not null
+);

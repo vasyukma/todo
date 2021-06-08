@@ -1,4 +1,4 @@
-package ru.vasyukma.todo.security;
+package ru.vasyukma.todo.model.security;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import ru.vasyukma.todo.security.EncryptionAlgorithm;
 
 @Entity
 public class AuthUser {

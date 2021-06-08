@@ -8,7 +8,24 @@ INSERT INTO authority
 VALUES
 ('READ', '1');
 
-INSERT INTO task
-(topic, description)
+INSERT INTO Box
+(name)
 VALUES
-('The test task', 'Description');
+('Входящие'),
+('Сегодня'),
+('На неделе'),
+('Позже');
+
+INSERT INTO task
+(subject)
+VALUES
+('Заменить принтер'),
+('Установить телефон'),
+('Посмотреть СБИС');
+
+INSERT INTO job
+(task, box)
+VALUES
+(1, 2),
+(2, 3),
+(3, 4);

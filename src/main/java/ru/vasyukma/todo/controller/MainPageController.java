@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import ru.vasyukma.todo.model.Task;
+import ru.vasyukma.todo.model.Job;
+import ru.vasyukma.todo.repository.BoxRepository;
+import ru.vasyukma.todo.repository.JobRepository;
 import ru.vasyukma.todo.service.TaskService;
 
 @Controller
@@ -17,14 +19,21 @@ public class MainPageController {
     @Autowired
     private TaskService taskService;
     
+    @Autowired
+    private JobRepository jobRepository;
+    
+    @Autowired
+    private BoxRepository boxRepository;
+    
     @GetMapping("/main")
     public String main(Authentication a, Model model) {
+        
+        List<Job> jobs = jobRepository.findAll();
+        
         model.addAttribute("username", a.getName());
-//        List<Task> tasks = taskService.findAll();
         model.addAttribute("tasks", taskService.findAll());
-//        model.addAttribute("tasks", tasks);
+        model.addAttribute("boxes", boxRepository.findAll());
         
         return "main.html";
-//        return "test.html";
     }
 }

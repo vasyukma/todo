@@ -11,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import ru.vasyukma.todo.service.security.JpaUserDetailsService;
+
 @Service
 public class AuthenticationProviderService implements AuthenticationProvider {
     

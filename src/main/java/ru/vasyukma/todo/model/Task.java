@@ -12,17 +12,21 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    private String topic;
-    private String description;
+    private String subject;
+
     public Integer getId() {
         return id;
     }
-    public String getTopic() {
-        return topic;
+
+    public void setId(Integer id) {
+        this.id = id;
     }
-    public String getDescription() {
-        return description;
+
+    public String getSubject() {
+        return subject;
     }
-    
-    
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 }

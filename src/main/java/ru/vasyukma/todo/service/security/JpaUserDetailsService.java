@@ -1,4 +1,4 @@
-package ru.vasyukma.todo.security;
+package ru.vasyukma.todo.service.security;
 
 import java.util.function.Supplier;
 
@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import ru.vasyukma.todo.model.security.AuthUser;
+import ru.vasyukma.todo.repository.security.AuthUserRepository;
+import ru.vasyukma.todo.security.CustomUserDetails;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService {

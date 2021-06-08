@@ -1,4 +1,4 @@
-package ru.vasyukma.todo.security;
+package ru.vasyukma.todo.model.security;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -7,6 +7,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import ru.vasyukma.todo.model.security.AuthUser;
+
 public class CustomUserDetails implements UserDetails {
     
     private AuthUser authUser;
