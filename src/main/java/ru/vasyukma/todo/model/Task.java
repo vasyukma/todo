@@ -8,6 +8,13 @@ import javax.persistence.Id;
 @Entity
 public class Task {
     
+    public Task() {
+    }
+    
+    public Task(String subject) {
+        this.subject = subject;
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

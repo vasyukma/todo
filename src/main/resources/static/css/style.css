@@ -17,7 +17,7 @@ caption {
 }
 
 tr:nth-child(odd) {
-    background-color: #fcba7a;
+    background-color: snow;
 }
 
 td:nth-child(2) {
@@ -41,7 +41,7 @@ td:nth-child(6) {
 }
 
 tr:hover {
-    background-color: #fccb00;
+    background-color: #fcba7a;
 }
 
 table table tr:nth-child(1) {

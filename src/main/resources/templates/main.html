@@ -3,36 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Tasks</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
 	<h2 th:text="'Hello, ' + ${username} + '!'" />
 	<p>
 		<a href="/logout">Sign out here</a>
 	</p>
+    <div>
+        <form action="main" method="POST">
+            <input type="text" name="subject"> <input type="submit"
+                value="Add the new task">
+        </form>
+    </div>
 	<h2>These are all the tasks:</h2>
 	<table>
 		<thead>
 			<tr>
-				<th>Topic</th>
- 				<th>Description</th> 
- 				
+				<th>Task</th>
+				<th>Action</th>
 			</tr>
 		<tbody>
 			<tr th:if="${tasks.empty}">
 				<td colspan="2">No Tasks Available</td>
 			</tr>
 			<tr th:each="task : ${tasks}">
-				<td><span th:text="${task.subject}"> Topic </span></ 
+				<td><span th:text="${task.subject}"> Task </span></td>
+				<td>
+					<form th:object="${commandObject}" th:action="@{/main}"
+						th:method="delete">
+						<input type="hidden" name="taskId" th:value="${task.id}">
+						<input type="submit" value="Delete">
+					</form>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-	<div>
-		Boxes!!!!!
-		<div th:each="box : ${boxes}">
-			<div><span th:text="${box.name}">Task</span></div>
-		</div>
-	</div>
-	
 </body>
 </html>

@@ -17,4 +17,12 @@ public class TaskService {
     public List<Task> findAll() {
         return taskRepository.findAll();
     }
+    
+    public void addTask(String subject) {
+        taskRepository.save(new Task(subject));
+    }
+    
+    public void deleteTask(int taskId) {
+        taskRepository.delete(taskRepository.getById(taskId));
+    }
 }
